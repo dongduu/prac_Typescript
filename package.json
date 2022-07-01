@@ -1,0 +1,21 @@
+{
+  "name": "prac_typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dongduu/prac_Typescript/issues"
+  },
+  "keywords": [
+    "typescript",
+    "javascript"
+  ],
+  "dependencies": {
+    "typescript": "^4.7.4"
+  }
+}
