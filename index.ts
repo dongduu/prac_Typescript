@@ -1,17 +1,23 @@
-// call signature
-// type SuperPrint = {
-//   <T, M>(arr: T[], item?: M): T;
-// };
+type Player<E> = {
+  name: string;
+  extraInfo: E;
+};
 
-// 함수 구현
-function last<T>(arr: T) {
-  return arr;
-}
-// const prepend: SuperPrint = (arr, item) => {
-//   arr.push(item);
-//   return arr;
-// };
+type DongduExtra = {
+  favFood: string;
+};
 
-// 함수 실행
-console.log(last([1, 2, 3, 4]));
-//console.log(prepend([1, 2, 3, 4], 2));
+type DonguPlayer = Player<DongduExtra>;
+
+const dongdu: DonguPlayer = {
+  name: "dongdu",
+  extraInfo: {
+    favFood: "banana",
+  },
+};
+
+// name만 가진 프로필 만들기
+const boong: Player<null> = {
+  name: "boong",
+  extraInfo: null,
+};
