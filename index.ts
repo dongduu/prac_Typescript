@@ -1,42 +1,42 @@
-type Food = string;
+interface User {
+  name: string;
+  // readonly name: string
+}
 
-const kimchi: Food = "good";
-
-//////////////////////////////////////////////
-
-type Player = {
-  nickName: string;
-  healthBar: number;
-};
+interface Player extends User {}
 
 const nico: Player = {
-  nickName: "nico",
-  healthBar: 10,
+  name: "nico",
 };
 
-//////////////////////////////////////////////
+/////////////////////////////////////////////////
 
-type NickName = string;
-type Health = number;
-
-type Player = {
-  nickName: NickName;
-  healthBar: Health;
+type User = {
+  name: string;
 };
 
-//////////////////////////////////////////////
-
-type Team = "red" | "blue" | "yellow";
-type Health = 1 | 5 | 10;
-
-type Player = {
-  nickName: string;
-  team: Team;
-  health: Health;
-};
+type Player = User & {};
 
 const nico: Player = {
-  nickName: "nico",
-  team: "red",
-  health: 5,
+  name: "nico",
+};
+
+/////////////////////////////////////////////////
+
+interface User {
+  name: string;
+}
+
+interface User {
+  lastName: string;
+}
+
+interface User {
+  health: number;
+}
+
+const nico: User = {
+  name: "nico",
+  lastName: "le",
+  health: 10,
 };
