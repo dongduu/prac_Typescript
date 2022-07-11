@@ -1,34 +1,42 @@
-type Words = {
-  // object 타입 선언 방식
-  [key: string]: string; // "potato" : "food"
+type Food = string;
+
+const kimchi: Food = "good";
+
+//////////////////////////////////////////////
+
+type Player = {
+  nickName: string;
+  healthBar: number;
 };
 
-class Dict {
-  private words: Words;
-  constructor() {
-    this.words = {};
-  }
-  add(word: Word) {
-    // 클래스를 타입처럼 사용하는 방법
-    if (this.words[word.term] === undefined) {
-      this.words[word.term] = word.def;
-    }
-  }
-  def(term: string) {
-    return this.words[term];
-  }
-}
+const nico: Player = {
+  nickName: "nico",
+  healthBar: 10,
+};
 
-class Word {
-  constructor(public readonly term: string, public readonly def: string) {}
-}
+//////////////////////////////////////////////
 
-const kimchi = new Word("kimchi", "한국음식");
+type NickName = string;
+type Health = number;
 
-const dict = new Dict();
+type Player = {
+  nickName: NickName;
+  healthBar: Health;
+};
 
-dict.add(kimchi);
-dict.def(kimchi);
+//////////////////////////////////////////////
 
-console.log(dict);
-console.log(kimchi);
+type Team = "red" | "blue" | "yellow";
+type Health = 1 | 5 | 10;
+
+type Player = {
+  nickName: string;
+  team: Team;
+  health: Health;
+};
+
+const nico: Player = {
+  nickName: "nico",
+  team: "red",
+  health: 5,
+};
