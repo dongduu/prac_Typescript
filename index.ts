@@ -1,42 +1,16 @@
 interface User {
-  name: string;
-  // readonly name: string
-}
-
-interface Player extends User {}
-
-const nico: Player = {
-  name: "nico",
-};
-
-/////////////////////////////////////////////////
-
-type User = {
-  name: string;
-};
-
-type Player = User & {};
-
-const nico: Player = {
-  name: "nico",
-};
-
-/////////////////////////////////////////////////
-
-interface User {
-  name: string;
-}
-
-interface User {
+  firstName: string;
   lastName: string;
+  sayHi(name: string): string;
+  fullName(): string;
 }
 
-interface User {
-  health: number;
+class Player implements User {
+  constructor(public firstName: string, public lastName: string) {}
+  fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+  sayHi(name: string) {
+    return `Hello ${name}`;
+  }
 }
-
-const nico: User = {
-  name: "nico",
-  lastName: "le",
-  health: 10,
-};
