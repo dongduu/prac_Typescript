@@ -1,34 +1,28 @@
-type PlayerA = {
-  name: string;
-};
-
-type PlayerAA = PlayerA & {
-  lastName: string;
-};
-
-// type PlayerAA = {
-//    health: number
-//}
-
-interface PlayerB {
-  name: string;
+interface SStorage<T> {
+  [key: string]: T;
 }
 
-interface PlayerBB extends PlayerB {
-  lastName: string;
+class LocalStorage<T> {
+  private storage: SStorage<T> = {};
+  set(key: string, value: T) {
+    this.storage[key] = value;
+  }
+  remove(key: string) {
+    delete this.storage[key];
+  }
+  get(key: string): T {
+    return this.storage[key];
+  }
+  clear() {
+    this.storage = {};
+  }
 }
 
-interface PlayerBB {
-  health: number;
-}
+const stringStorage = new LocalStorage<string>();
 
-const playerA: PlayerAA = {
-  name: "dongdu",
-  lastName: "lee",
-};
+stringStorage.get("hi");
+stringStorage.set("dd", "ff");
 
-const playerB: PlayerBB = {
-  name: "dongdu",
-  lastName: "lee",
-  health: 10,
-};
+const booleanStorage = new LocalStorage<boolean>();
+booleanStorage.get("hello");
+booleanStorage.set("er", true);
