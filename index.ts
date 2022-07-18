@@ -19,7 +19,6 @@ class LocalStorage<T> {
 }
 
 const stringStorage = new LocalStorage<string>();
-
 stringStorage.get("hi");
 stringStorage.set("poly", "ff");
 
